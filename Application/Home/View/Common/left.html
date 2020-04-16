@@ -1,0 +1,27 @@
+<div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree" lay-filter="test">
+            <li class="layui-nav-item layui-nav-itemed">
+                <a class="" href="javascript:;">菜单栏</a>
+                <dl class="layui-nav-child">
+                    <dd>
+                        <a href="{:U('index/user')}" >用户管理</a>
+                    </dd>
+                    <dd>
+                        <a href="{:U('department/index')}" >小区人员管理</a>
+                    </dd>
+                    <dd>
+                        <a href="{:U('index/admins')}" >出行记录管理</a>
+                    </dd>
+                    <dd>
+                        <a href="{:U('index/admins')}" >人员出勤查询</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0)"  onclick="updatePwd('修改密码',1)">修改密码</a>
+                    </dd>
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>

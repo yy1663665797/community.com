@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>八一社区疫情防控指挥应急系统</title>
+	<link rel="stylesheet" href="/Public/css/layui.css">
+</head>
+
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+	<include file="Common/header" />
+
+	<include file="Common/left" />
+
+
+	<div class="layui-body" style="z-index: 0;">
+		<!-- 内容主体区域 -->
+		<div style="padding: 15px;">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	    <link rel="stylesheet" href="/Public/css/amazeui.min.css">
+		<link rel="stylesheet" href="/Public/css/admin.css">
+		<link rel="stylesheet" href="/Public/css/app.css">
+		<style>
+			.admin-main{
+				padding-top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="am-cf admin-main">
+		<!-- content start -->
+		<div class="admin-content">
+			<div class="admin-content-body">
+				<div class="am-g">
+					<form class="am-form am-form-horizontal" action="{:U('Department/houseUpdateSave')}"
+						 method="post"
+						style="padding-top:30px;" data-am-validator>
+
+
+						<div class="am-form-group">
+							<label for="user-name" class="am-u-sm-3 am-form-label">
+								楼栋编号</label>
+							<div class="am-u-sm-9">
+								<input type="text" id="doc-vld-pwd-2" required placeholder=""
+									name="house_no"  data-equal-to="#doc-vld-pwd-1" value="{$house.house_no}" >
+							</div>
+						</div>
+						<div class="am-form-group">
+							<label for="user-name" class="am-u-sm-3 am-form-label">
+								特殊备注</label>
+							<div class="am-u-sm-9">
+								<input type="text" id="doc-vld-pwd-2" required placeholder=""
+									   name="remark"  data-equal-to="#doc-vld-pwd-1" value="{$house.remark}" >
+							</div>
+						</div>
+
+						<input type="hidden" name="id" value="{$house.id}">
+						<input type="hidden" name="com_id" value="<?php echo I('com_id'); ?>">
+						<div class="am-form-group">
+							<div class="am-u-sm-9 am-u-sm-push-3">
+								<input type="submit" class="am-btn am-btn-success" value="新增/修改" />
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript"
+		src="/Public/assets/js/libs/jquery-1.10.2.min.js">
+	</script>
+	<script type="text/javascript" src="/Public/myplugs/js/plugs.js">
+	</script>
+	</body>
+		</div>
+	</div>
+
+	<include file="Common/footer" />
+</div>
+
+<script type="text/javascript" src="/Public/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/Public/myplugs/js/plugs.js">
+</script>
+<script type="text/javascript">
+	//添加编辑弹出层
+	function updatePwd(title, id) {
+		$.jq_Panel({
+			title: title,
+			iframeWidth: 500,
+			iframeHeight: 300,
+			url: "{:U('updatePwd')}"
+		});
+	}
+</script>
+<script src="Public/js/layui.js"></script>
+<script>
+	//JavaScript代码区域
+	layui.use('element', function() {
+		var element = layui.element;
+
+	});
+</script>
+</body>
+
+</html>
